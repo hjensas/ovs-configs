@@ -1,0 +1,12 @@
+NAME=osp9storagemgmt
+DEVICE=osp9storagemgmt
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSIntPort
+OVS_BRIDGE=br-osp9trunk
+IPV6INIT=no
+BOOTPROTO=static
+IPADDR=172.16.107.254
+PREFIX=24
+OVS_OPTIONS="tag=107"
+

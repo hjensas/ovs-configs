@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<direct>
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i virbr0 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i osp9management -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i osp9provision -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i osp9external -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i osp9storage -j ACCEPT </rule> ]
+
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i ooomanagement -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i oooprovision -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i oooexternal -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i ooostorage -j ACCEPT </rule> ]
+
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i osp8provision -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="FORWARD" priority="0"> -i osp7provision -j ACCEPT </rule> ]
+
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp7provision -p udp -m udp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp7provision -p tcp -m tcp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp8provision -p udp -m udp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp8provision -p tcp -m tcp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp9provision -p udp -m udp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp9provision -p tcp -m tcp --dport 53 -j ACCEPT </rule> ]
+
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp9management -p udp -m udp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp9management -p tcp -m tcp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp9storage -p udp -m udp --dport 67 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i osp9storage -p udp -m udp --dport 68 -j ACCEPT </rule> ]
+
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i oooprovision -p udp -m udp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i oooprovision -p tcp -m tcp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i ooomanagement -p udp -m udp --dport 53 -j ACCEPT </rule> ]
+ [ <rule ipv="ipv4" table="filter" chain="INPUT" priority="0"> -i ooomanagement -p tcp -m tcp --dport 53 -j ACCEPT </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.100.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.100.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.101.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.101.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.103.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.103.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.200.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.200.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.201.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.201.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.203.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.16.203.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 192.168.122.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 192.168.122.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.17.0.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.17.0.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.18.0.0/24 -d base-address.mcast.net/24 -j RETURN </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -s 172.18.0.0/24 -d 255.255.255.255 -j RETURN </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.16.100.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.16.100.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.16.100.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.16.103.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.16.103.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.16.103.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.16.101.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.16.101.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.16.101.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.16.200.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.16.200.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.16.200.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.16.203.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.16.203.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.16.103.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.16.201.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.16.201.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.16.101.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 192.168.122.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 192.168.122.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 192.168.122.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.17.0.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.17.0.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.17.0.0/24 -j MASQUERADE </rule> ]
+
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p tcp ! -d 172.18.0.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> -p udp ! -d 172.18.0.0/24 -j MASQUERADE --to-ports 1024-65535 </rule> ]
+ [ <rule ipv="ipv4" table="nat" chain="POSTROUTING" priority="0"> ! -d 172.18.0.0/24 -j MASQUERADE </rule> ]
+ 
+</direct>
+

@@ -1,0 +1,7 @@
+DEVICE=br-osp7trunk
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSBridge
+HOTPLUG=no
+BOOTPROTO=none
+

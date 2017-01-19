@@ -1,0 +1,12 @@
+NAME=osp9external
+DEVICE=osp9external
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSIntPort
+OVS_BRIDGE=br-osp9trunk
+IPV6INIT=no
+BOOTPROTO=static
+IPADDR=172.16.101.254
+PREFIX=24
+OVS_OPTIONS="tag=101"
+

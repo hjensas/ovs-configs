@@ -1,0 +1,12 @@
+NAME=osp7storage
+DEVICE=osp7storage
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSIntPort
+OVS_BRIDGE=br-osp7trunk
+IPV6INIT=no
+BOOTPROTO=static
+IPADDR=172.18.6.254
+PREFIX=24
+OVS_OPTIONS="tag=406"
+

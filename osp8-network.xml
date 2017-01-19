@@ -1,0 +1,27 @@
+<network>
+  <name>osp8-network</name>
+  <forward mode='bridge'/>
+  <bridge name='br-osp8trunk'/>
+  <virtualport type='openvswitch'/>
+  <portgroup name='osp8provision'>
+    <vlan>
+      <tag id='300'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='osp8management'>
+    <vlan>
+      <tag id='303'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='osp8trunk' default='yes'>
+    <vlan trunk='yes'>
+      <tag id='301'/>
+      <tag id='302'/>
+      <tag id='304'/>
+      <tag id='305'/>
+      <tag id='306'/>
+      <tag id='307'/>
+    </vlan>
+  </portgroup>
+</network>
+

@@ -1,0 +1,22 @@
+<network>
+  <name>osp7-network</name>
+  <forward mode='bridge'/>
+  <bridge name='br-osp7trunk'/>
+  <virtualport type='openvswitch'/>
+  <portgroup name='osp7provision'>
+    <vlan>
+      <tag id='400'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='osp7trunk' default='yes'>
+    <vlan trunk='yes'>
+      <tag id='401'/>
+      <tag id='402'/>
+      <tag id='404'/>
+      <tag id='405'/>
+      <tag id='406'/>
+      <tag id='407'/>
+    </vlan>
+  </portgroup>
+</network>
+

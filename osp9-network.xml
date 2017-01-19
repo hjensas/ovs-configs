@@ -1,0 +1,27 @@
+<network>
+  <name>osp9-network</name>
+  <forward mode='bridge'/>
+  <bridge name='br-osp9trunk'/>
+  <virtualport type='openvswitch'/>
+  <portgroup name='provision'>
+    <vlan>
+      <tag id='100'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='management'>
+    <vlan>
+      <tag id='103'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='osp9trunk' default='yes'>
+    <vlan trunk='yes'>
+      <tag id='101'/>
+      <tag id='102'/>
+      <tag id='104'/>
+      <tag id='105'/>
+      <tag id='106'/>
+      <tag id='107'/>
+    </vlan>
+  </portgroup>
+</network>
+

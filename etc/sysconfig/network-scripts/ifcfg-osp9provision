@@ -1,0 +1,11 @@
+NAME=osp9provision
+DEVICE=osp9provision
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSIntPort
+OVS_BRIDGE=br-osp9trunk
+IPV6INIT=no
+BOOTPROTO=static
+IPADDR=172.16.100.254
+PREFIX=24
+OVS_OPTIONS="tag=100"

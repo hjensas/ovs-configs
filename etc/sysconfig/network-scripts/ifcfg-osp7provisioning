@@ -1,0 +1,11 @@
+NAME=osp7provision
+DEVICE=osp7provision
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSIntPort
+OVS_BRIDGE=br-osp7trunk
+IPV6INIT=no
+BOOTPROTO=static
+IPADDR=172.18.0.254
+PREFIX=24
+OVS_OPTIONS="tag=400"

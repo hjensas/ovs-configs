@@ -1,0 +1,11 @@
+NAME=osp8provision
+DEVICE=osp8provision
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSIntPort
+OVS_BRIDGE=br-osp8trunk
+IPV6INIT=no
+BOOTPROTO=static
+IPADDR=172.17.0.254
+PREFIX=24
+OVS_OPTIONS="tag=300"

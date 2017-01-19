@@ -1,0 +1,27 @@
+<network>
+  <name>ooo-network</name>
+  <forward mode='bridge'/>
+  <bridge name='br-oootrunk'/>
+  <virtualport type='openvswitch'/>
+  <portgroup name='oooprovision'>
+    <vlan>
+      <tag id='200'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='ooomanagement'>
+    <vlan>
+      <tag id='203'/>
+    </vlan>
+  </portgroup>
+  <portgroup name='oootrunk' default='yes'>
+    <vlan trunk='yes'>
+      <tag id='201'/>
+      <tag id='202'/>
+      <tag id='204'/>
+      <tag id='205'/>
+      <tag id='206'/>
+      <tag id='207'/>
+    </vlan>
+  </portgroup>
+</network>
+
