@@ -1,0 +1,34 @@
+resource_registry:
+  OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/templates/network/nic-configs/controller.yaml
+  OS::TripleO::Compute::Net::SoftwareConfig: /home/stack/templates/network/nic-configs/compute.yaml
+  OS::TripleO::BlockStorage::Net::SoftwareConfig: /usr/share/openstack-tripleo-heat-templates/net-config-noop.yaml
+  OS::TripleO::ObjectStorage::Net::SoftwareConfig: /usr/share/openstack-tripleo-heat-templates/net-config-noop.yaml
+  OS::TripleO::CephStorage::Net::SoftwareConfig: /usr/share/openstack-tripleo-heat-templates/net-config-noop.yaml
+
+parameter_defaults:
+  InternalApiNetCidr: 172.18.3.0/24
+  TenantNetCidr: 172.18.4.0/24
+  StorageNetCidr: 172.18.6.0/24
+  StorageMgmtNetCidr: 172.18.7.0/24
+  ExternalNetCidr: 172.18.1.0/24
+  InternalApiAllocationPools: [{'start': '172.18.3.11', 'end': '172.18.3.49'}]
+  TenantAllocationPools: [{'start': '172.18.4.11', 'end': '172.18.4.49'}]
+  StorageAllocationPools: [{'start': '172.18.6.11', 'end': '172.18.6.49'}]
+  StorageMgmtAllocationPools: [{'start': '172.18.7.11', 'end': '172.18.7.49'}]
+  # Leave room for floating IPs in the External allocation pool
+  ExternalAllocationPools: [{'start': '172.18.1.11', 'end': '172.18.1.49'}]
+  # Set to the router gateway on the external network
+  ExternalInterfaceDefaultRoute: 172.18.1.254
+  # Gateway router for the provisioning network (or Undercloud IP)
+  ControlPlaneDefaultRoute: 172.18.0.254
+  # The IP address of the EC2 metadata server. Generally the IP of the Undercloud
+  EC2MetadataIp: 172.18.0.1
+  # Define the DNS servers (maximum 2) for the overcloud nodes
+  DnsServers: ["8.8.8.8","8.8.4.4"]
+  InternalApiNetworkVlanID: 403
+  StorageNetworkVlanID: 406
+  StorageMgmtNetworkVlanID: 407
+  TenantNetworkVlanID: 404
+  ExternalNetworkVlanID: 401
+  # Set to "br-ex" if using floating IPs on native VLAN on bridge br-ex
+  NeutronExternalNetworkBridge: "''"
