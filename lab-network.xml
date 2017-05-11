@@ -1,0 +1,12 @@
+<network>
+  <name>lab</name>
+  <forward mode='bridge'/>
+  <bridge name='br-trunk'/>
+  <virtualport type='openvswitch'/>
+  <portgroup name='lab'>
+    <vlan>
+      <tag id='103'/>
+    </vlan>
+  </portgroup>
+</network>
+
